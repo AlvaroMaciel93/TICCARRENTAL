@@ -52,12 +52,12 @@ void Aluguel::setDataTermino(string data)
     data_termino = data;
 }
 
-void Aluguel::setVeiculo(Veiculo &veiculo)
+void Aluguel::setVeiculo(Veiculo *veiculo)
 {
     this->veiculo = veiculo;
 }
 
-void Aluguel::setCliente(Cliente &cliente)
+void Aluguel::setCliente(Cliente *cliente)
 {
     this->cliente = cliente;
 }
