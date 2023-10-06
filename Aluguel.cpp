@@ -36,3 +36,8 @@ float Aluguel::calcular_valor_final()
     int diasAlugados = calcularDiferencaDeDias(data_inicio, data_devolucao);
     return diasAlugados * valorDeTeste - desconto + adicional; // getPrecoPorDay()
 }
+
+void Aluguel::setDataDevolucao(string data)
+{
+    data_devolucao = data; // dd/mm/aaaa
+}

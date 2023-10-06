@@ -51,6 +51,7 @@ class Aluguel : public Veiculo {
     float adicional;
 
     float calcular_valor_final();
+    void setDataDevolucao(string data);
 };
 
 #endif
