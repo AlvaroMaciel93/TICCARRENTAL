@@ -41,3 +41,23 @@ void Aluguel::setDataDevolucao(string data)
 {
     data_devolucao = data; // dd/mm/aaaa
 }
+
+void Aluguel::setDataInicio(string data)
+{
+    data_inicio = data;
+}
+
+void Aluguel::setDataTermino(string data)
+{
+    data_termino = data;
+}
+
+void Aluguel::setVeiculo(Veiculo &veiculo)
+{
+    this->veiculo = veiculo;
+}
+
+void Aluguel::setCliente(Cliente &cliente)
+{
+    this->cliente = cliente;
+}
