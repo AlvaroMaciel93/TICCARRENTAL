@@ -57,8 +57,7 @@ public:
     string imprimeVeiculo();
 };
 
-class Aluguel
-{
+class Aluguel : public Veiculo {
     string id;
     Veiculo veiculo;
     Cliente cliente;
@@ -68,6 +67,9 @@ class Aluguel
     string data_devolucao;
     float desconto;
     float adicional;
+
+    float calcular_valor_final();
+    void setDataDevolucao(string data);
 };
 
 #endif
