@@ -21,24 +21,12 @@ class Aluguel;
 class Funcionario;
 class Veiculo;
 
-class Usuario{
-    private:
-        string CPF;
-        string nome;
-        string endereco;
-        string telefone;
-    public:
-        Usuario(string CPF, string nome, string endereco, string telefone);
-        void adicionarUsuario(string CPF, string nome, string endereco, string telefone);
-        void setCPF(string CPF);
-        string getCPF();
-        void setNome(string nome);
-        string getNome();
-        void setEndereco(string endereco);
-        string getEndereco();
-        void setTelefone(string telefone);
-        string getTelefone();
-        void exibir_dados();
+class Usuario
+{
+    string CPF;
+    string nome;
+    string endereco;
+    string telefone;
 };
 
 class Cliente : public Usuario
