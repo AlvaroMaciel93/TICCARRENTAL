@@ -15,6 +15,12 @@
 
 using namespace std;
 
+class Usuario;
+class Cliente;
+class Aluguel;
+class Funcionario;
+class Veiculo;
+
 class Usuario
 {
     string CPF;
@@ -31,6 +37,10 @@ class Cliente : public Usuario
 class Funcionario : public Usuario
 {
     string CNH_funcionario;
+    vector<Aluguel> historicoAlugueis;
+    public:
+    Aluguel alugarVeiculo(Cliente *pCliente,Veiculo *pVeiculo, string DataInicio, string DataTermino, Aluguel &a);
+    void finalizarAluguel(Aluguel *aluguel, string dataTermino);
 };
 
 class Veiculo
@@ -59,18 +69,18 @@ public:
 
 class Aluguel : public Veiculo {
     string id;
-    Veiculo veiculo;
-    Cliente cliente;
-    Funcionario funcionario;
+    Veiculo *veiculo;
+    Cliente *cliente;
+    Funcionario *funcionario;
     string data_inicio;
     string data_termino;
     string data_devolucao;
     float desconto;
     float adicional;
-
+    public:
     float calcular_valor_final();
-    void setVeiculo(Veiculo &veiculo);
-    void setCliente(Cliente &cliente);
+    void setVeiculo(Veiculo *veiculo);
+    void setCliente(Cliente *cliente);
     void setDataInicio(string data);
     void setDataTermino(string data);
     void setDataDevolucao(string data);
