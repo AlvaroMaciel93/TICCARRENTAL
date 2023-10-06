@@ -69,7 +69,12 @@ class Aluguel : public Veiculo {
     float adicional;
 
     float calcular_valor_final();
+    void setVeiculo(Veiculo &veiculo);
+    void setCliente(Cliente &cliente);
+    void setDataInicio(string data);
+    void setDataTermino(string data);
     void setDataDevolucao(string data);
+
 };
 
 #endif
