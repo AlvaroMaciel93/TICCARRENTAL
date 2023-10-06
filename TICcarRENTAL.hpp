@@ -27,19 +27,28 @@ class Usuario
     string nome;
     string endereco;
     string telefone;
+
+    public:
+    Usuario(string CPF, string nome, string endereco, string telefone){};
 };
 
 class Cliente : public Usuario
 {
     string CNH_cliente;
+    vector<Aluguel> historicoAlugueis;
+    public:
+    // Construtor da classe Cliente
+    Cliente(std::string CPF, std::string nome, std::string endereco, std::string telefone, std::string CNH_cliente);
+    void setCNH_cliente(string CNH_cliente);
 };
 
 class Funcionario : public Usuario
 {
     string CNH_funcionario;
     vector<Aluguel> historicoAlugueis;
-    public:
-    Aluguel alugarVeiculo(Cliente *pCliente,Veiculo *pVeiculo, string DataInicio, string DataTermino, Aluguel &a);
+
+public:
+    Aluguel alugarVeiculo(Cliente *pCliente, Veiculo *pVeiculo, string DataInicio, string DataTermino, Aluguel &a);
     void finalizarAluguel(Aluguel *aluguel, string dataTermino);
 };
 
@@ -67,7 +76,8 @@ public:
     string imprimeVeiculo();
 };
 
-class Aluguel : public Veiculo {
+class Aluguel : public Veiculo
+{
     string id;
     Veiculo *veiculo;
     Cliente *cliente;
@@ -77,14 +87,14 @@ class Aluguel : public Veiculo {
     string data_devolucao;
     float desconto;
     float adicional;
-    public:
+
+public:
     float calcular_valor_final();
     void setVeiculo(Veiculo *veiculo);
     void setCliente(Cliente *cliente);
     void setDataInicio(string data);
     void setDataTermino(string data);
     void setDataDevolucao(string data);
-
 };
 
 #endif
