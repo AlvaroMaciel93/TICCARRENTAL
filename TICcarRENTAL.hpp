@@ -50,6 +50,7 @@ class Aluguel {
     float desconto;
     float adicional;
 
+    float calcular_valor_final();
 };
 
 #endif
