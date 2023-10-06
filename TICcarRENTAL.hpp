@@ -15,31 +15,50 @@
 
 using namespace std;
 
-class Usuario{
+class Usuario
+{
     string CPF;
     string nome;
     string endereco;
     string telefone;
 };
 
-class Cliente : public Usuario{
+class Cliente : public Usuario
+{
     string CNH_cliente;
-
 };
 
-class Funcionario : public Usuario{
+class Funcionario : public Usuario
+{
     string CNH_funcionario;
 };
 
-class Veiculo {
+class Veiculo
+{
+    string identificador;
     string placa;
     string marca;
     string modelo;
     int anodefabricacao;
     float precoporday;
+
+public:
+    Veiculo(string marca, string modelo, string placa, int anodefabricacao, float precoporday);
+    void setPlaca(string placa);
+    string getPlaca();
+    void setMarca(string marca);
+    string getMarca();
+    void setModelo(string modelo);
+    string getModelo();
+    void setAnoFabricacao(int anoFabricacao);
+    int getAnoFabricacao();
+    void setPrecoPorDay(float precoporday);
+    float getPrecoPorDay();
+    string imprimeVeiculo();
 };
 
-class Aluguel {
+class Aluguel
+{
     string id;
     Veiculo veiculo;
     Cliente cliente;
@@ -49,7 +68,6 @@ class Aluguel {
     string data_devolucao;
     float desconto;
     float adicional;
-
 };
 
 #endif
