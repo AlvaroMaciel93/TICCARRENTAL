@@ -39,7 +39,7 @@ class Veiculo {
     float precoporday;
 };
 
-class Aluguel {
+class Aluguel : public Veiculo {
     string id;
     Veiculo veiculo;
     Cliente cliente;
