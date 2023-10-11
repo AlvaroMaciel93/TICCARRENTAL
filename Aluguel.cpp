@@ -32,9 +32,8 @@ int calcularDiferencaDeDias(const string &dataInicio, const string &dataFim)
 
 float Aluguel::calcular_valor_final()
 {
-    float valorDeTeste = 50;
     int diasAlugados = calcularDiferencaDeDias(data_inicio, data_devolucao);
-    return diasAlugados * valorDeTeste - desconto + adicional; // getPrecoPorDay()
+    return diasAlugados * veiculo->getPrecoPorDay() - desconto + adicional;
 }
 
 void Aluguel::setDataDevolucao(string data)
