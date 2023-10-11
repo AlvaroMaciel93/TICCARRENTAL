@@ -58,8 +58,11 @@ class Funcionario : public Usuario
     vector<Aluguel> historicoAlugueis;
 
 public:
+    // Construtor
+    Funcionario(std::string CPF, std::string nome, std::string endereco, std::string telefone, std::string CNH_funcionario);
     Aluguel alugarVeiculo(Cliente *pCliente, Veiculo *pVeiculo, string DataInicio, string DataTermino, Aluguel &a);
     void finalizarAluguel(Aluguel *aluguel, string dataTermino);
+    void setCNH_funcionario(string CNH_funcionario);
 };
 
 class Veiculo
@@ -103,7 +106,7 @@ public:
     Aluguel(string id, Veiculo* veiculo, Cliente* cliente, Funcionario* funcionario, string data_inicio, string data_termino, string data_devolucao, float desconto, float adicional);
 
     float calcular_valor_final();
-    void setVeiculo(const Veiculo &veiculo);
+    void setVeiculo(Veiculo *Veiculo);
     void setCliente(Cliente *cliente);
     void setDataInicio(string data);
     void setDataTermino(string data);
