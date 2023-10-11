@@ -76,3 +76,7 @@ void Aluguel::setCliente(Cliente *cliente)
 {
     this->cliente = cliente;
 }
+
+string Aluguel::getDataDevolucao(){
+    return data_devolucao;
+}

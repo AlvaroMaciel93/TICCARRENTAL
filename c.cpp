@@ -21,13 +21,13 @@ float cotar_aluguel(const string &veiculo, const string &dataInicio, const strin
 }
 
 // Método para solicitar um aluguel
-Aluguel solicita_aluguel(const Veiculo &veiculo, const string &dataInicio, const string &dataTermino)
+Aluguel solicita_aluguel(Veiculo &veiculo, const string &dataInicio, const string &dataTermino)
 {
     // Crie um objeto Aluguel
     Aluguel novoAluguel;
 
     // Configure o veículo e datas no objeto Aluguel
-    novoAluguel.setVeiculo(veiculo);
+    novoAluguel.setVeiculo(&veiculo);
     novoAluguel.setDataInicio(dataInicio);
     novoAluguel.setDataTermino(dataTermino);
 
@@ -43,10 +43,15 @@ Aluguel solicita_aluguel(const Veiculo &veiculo, const string &dataInicio, const
 
 
 // Método para devolver um veículo alugado
-void devolver_veiculo(const Aluguel &aluguel, const string &dataDevolucao)
-{
-    // Implementação da lógica para devolver o veículo e finalizar o aluguel
-    // Atualize o status do aluguel e calcule eventuais custos adicionais
+void devolver_veiculo(Aluguel &aluguel, const string &dataDevolucao) {
+    // Verifique se o aluguel já foi devolvido anteriormente (caso contrário, isso pode ser feito em um método da classe Aluguel)
+    if (aluguel.getDataDevolucao() != "") {
+        cout << "Este aluguel já foi devolvido." << endl;
+        return; // Ou faça algo apropriado, como lançar uma exceção
+    }
+
+    // Atualize a data de devolução no objeto Aluguel
+    aluguel.setDataDevolucao(dataDevolucao);
 }
 
 void Cliente::setCNH_cliente(string CNH_cliente)
