@@ -6,6 +6,20 @@
 
 using namespace std;
 
+// Construtor da classe Aluguel
+Aluguel::Aluguel(string id, Veiculo* veiculo, Cliente* cliente, Funcionario* funcionario, string data_inicio, string data_termino, string data_devolucao, float desconto, float adicional)
+{
+    this->id = id;
+    this->veiculo = veiculo;
+    this->cliente = cliente;
+    this->funcionario = funcionario;
+    this->data_inicio = data_inicio;
+    this->data_termino = data_termino;
+    this->data_devolucao = data_devolucao;
+    this->desconto = desconto;
+    this->adicional = adicional;
+}
+
 // Função para converter uma data no formato "dd/mm/aaaa" em dias desde uma data de referência
 int converterDataParaDias(const string &data)
 {
