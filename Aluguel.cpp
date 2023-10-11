@@ -6,6 +6,8 @@
 
 using namespace std;
 
+Aluguel::Aluguel(){}
+
 // Construtor da classe Aluguel
 Aluguel::Aluguel(string id, Veiculo* veiculo, Cliente* cliente, Funcionario* funcionario, string data_inicio, string data_termino, string data_devolucao, float desconto, float adicional)
 {

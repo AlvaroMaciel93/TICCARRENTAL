@@ -99,6 +99,7 @@ class Aluguel
     float adicional;
 
 public:
+    Aluguel();
     Aluguel(string id, Veiculo* veiculo, Cliente* cliente, Funcionario* funcionario, string data_inicio, string data_termino, string data_devolucao, float desconto, float adicional);
 
     float calcular_valor_final();
