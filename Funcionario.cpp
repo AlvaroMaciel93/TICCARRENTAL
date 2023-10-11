@@ -4,7 +4,7 @@ using namespace std;
 
 // Implementação do construtor da classe Funcionario
     Funcionario::Funcionario(string CPF, string nome, string endereco, string telefone, string CNH_funcionario)
-    : Usuario(CPF, nome, endereco, telefone)
+    : Usuario::Usuario(CPF, nome, endereco, telefone)
     {
     setCNH_funcionario(CNH_funcionario);
     }

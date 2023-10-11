@@ -52,9 +52,11 @@ float Veiculo::getPrecoPorDay(){
 }
 
 string Veiculo::imprimeVeiculo(){
-    cout << "Marca: " << getMarca() << endl;
-    cout << "Modelo: " << getModelo() << endl;
-    cout << "Placa: " << getPlaca() << endl;
-    cout << "Ano de Fabricação: " << getAnoFabricacao() << endl;
-    cout << "Preço por dia: " << getPrecoPorDay() << endl;
+    string veiculo = "Marca: " + getMarca() + 
+    ", Modelo: " + getModelo() + 
+    ", Placa: " + getPlaca() + 
+    ", Ano de Fabricação: " + to_string(getAnoFabricacao()) + 
+    ", Preço por dia: " + to_string(getPrecoPorDay());
+
+    return veiculo;
 }
